@@ -1,0 +1,53 @@
+body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0c; color: white; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.magenta-glow { 
+    background: radial-gradient(circle at 75% 40%, rgba(214, 51, 132, 0.12) 0%, rgba(10, 10, 12, 0) 50%); 
+}
+.nav-pill { background: rgba(14, 14, 17, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+.comment-card { transition: all 0.3s ease; }
+.comment-card:hover { border-color: #d63384; box-shadow: 0 0 20px rgba(214, 51, 132, 0.15); transform: translateY(-4px); }
+.marquee-container:hover .marquee-content { animation-play-state: paused; }
+
+.stat-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(28, 28, 33, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(214, 51, 132, 0.4);
+    box-shadow: 0 15px 30px -10px rgba(214, 51, 132, 0.2);
+}
+
+.chart-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2.5s ease-out forwards;
+}
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+
+.chart-dot:hover + .chart-tooltip {
+    opacity: 1;
+    transform: translateY(-8px);
+}
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glossy-table-container {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%), #050505;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.8);
+}
+
+.nav-active-notch {
+    width: 14px;
+    height: 5px;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -14px;
+}

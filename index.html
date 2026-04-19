@@ -1,0 +1,349 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "primary": "#d63384",
+                        "primary-container": "#7b2166",
+                        "on-primary": "#ffffff",
+                        "surface": "#0a0a0c",
+                        "surface-container": "#141417",
+                        "surface-container-high": "#1c1c21",
+                        "surface-container-highest": "#26262b",
+                        "on-surface": "#ffffff",
+                        "on-surface-variant": "#94949e",
+                        "outline": "#3b3b42"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                },
+                "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                },
+                "animation": {
+                    "marquee-ltr": "marquee-ltr var(--duration) linear infinite",
+                    "marquee-rtl": "marquee-rtl var(--duration) linear infinite",
+                    "pulse-soft": "pulse-soft 3s ease-in-out infinite",
+                    "count-up": "count-up 2s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+                },
+                "keyframes": {
+                    "marquee-ltr": {
+                        "from": { transform: "translateX(0%)" },
+                        "to": { transform: "translateX(-50%)" },
+                    },
+                    "marquee-rtl": {
+                        "from": { transform: "translateX(-50%)" },
+                        "to": { transform: "translateX(0%)" },
+                    },
+                    "pulse-soft": {
+                        "0%, 100%": { opacity: "1", transform: "scale(1)" },
+                        "50%": { opacity: "0.6", transform: "scale(1.05)" },
+                    },
+                    "count-up": {
+                        "from": { opacity: "0", transform: "translateY(10px)" },
+                        "to": { opacity: "1", transform: "translateY(0)" }
+                    }
+                }
+              },
+            },
+          }
+        </script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary/30">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 px-12 py-8 pointer-events-none">
+<div class="max-w-[1600px] mx-auto flex justify-between items-center pointer-events-auto">
+<div class="text-xl font-extrabold tracking-tighter uppercase" style="">Beyond&nbsp;<span style="color: rgb(214, 51, 132); font-style: italic;" class="">LAYOFFS</span></div>
+<div class="nav-pill px-8 py-3 rounded-full flex items-center gap-10">
+<a class="text-sm font-medium text-white relative flex flex-col items-center" href="#" style="">
+                    Home
+                    <span class="nav-active-notch"></span>
+</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="#" style="">Runway</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="#" style="">Tracker</a>
+<a class="text-sm font-medium text-on-surface-variant hover:text-white transition-colors" href="#" style="">Trending</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-white cursor-pointer transition-colors" data-icon="notifications" style="">notifications</span>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-bold text-sm hover:brightness-110 transition-all" style="">
+                    Sign In
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-48 pb-24 relative overflow-hidden">
+<!-- Subtle Background Glow -->
+<div class="absolute inset-0 magenta-glow pointer-events-none"></div>
+<div class="max-w-[1600px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-12 gap-20 items-start relative z-10 mb-16">
+<!-- Hero Content Left -->
+<div class="lg:col-span-6 space-y-10">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 glass-panel rounded-full animate-pulse-soft">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#d63384]"></span>
+<span class="text-[0.65rem] uppercase tracking-[0.1em] font-bold text-on-surface-variant" style="">Live Tracking Enabled</span>
+</div>
+<h1 class="text-[4rem] md:text-[5.5rem] font-extrabold leading-[0.85] tracking-tighter uppercase" style="">Beyond<br>
+<span class="text-primary italic" style="">LAYOFFS</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed font-light" style="">
+                    Real-time intelligence on the workforce shifts defining the new era of Silicon Valley. We track the numbers so you can navigate the fallout.
+                </p>
+<div class="flex gap-4 pt-6">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all shadow-lg shadow-primary/20" style="">
+                        View Tracker
+                    </button>
+<button class="border border-outline text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white/5 transition-all" style="">
+                        Weekly Report
+                    </button>
+</div>
+</div>
+<!-- Data Dashboard Right -->
+<div class="lg:col-span-6 flex flex-col gap-6">
+<!-- Metric Boxes Grid -->
+<div class="grid grid-cols-3 gap-5">
+<div class="stat-card p-6 rounded-2xl border-l-[3px] border-primary">
+<span class="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-on-surface-variant block mb-3" style="">Total Layoffs 2026</span>
+<div class="text-3xl font-bold tracking-tight mb-1 animate-count-up" style="">248,390</div>
+<div class="text-[0.65rem] text-primary font-bold" style="">↑ 8.2% vs last quarter</div>
+</div>
+<div class="stat-card p-6 rounded-2xl border-l-[3px] border-outline">
+<span class="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-on-surface-variant block mb-3" style="">Impacted Companies</span>
+<div class="text-3xl font-bold tracking-tight mb-1 animate-count-up" style="">1,142</div>
+<div class="text-[0.65rem] text-on-surface-variant font-medium" style="">Updated 2m ago</div>
+</div>
+<div class="stat-card p-6 rounded-2xl border-l-[3px] border-outline">
+<span class="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-on-surface-variant block mb-3" style="">Avg. Severance</span>
+<div class="text-3xl font-bold tracking-tight mb-1 animate-count-up" style="">14.5 wks</div>
+<div class="text-[0.65rem] text-on-surface-variant font-medium" style="">Global average data</div>
+</div>
+</div>
+<!-- Weekly Momentum Chart Card -->
+<div class="glass-panel p-10 rounded-[2.5rem] relative overflow-hidden">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="text-white font-bold text-xl tracking-tight" style="">Weekly Momentum</h3>
+<p class="text-on-surface-variant text-[0.65rem] uppercase tracking-widest mt-1" style="">Impact frequency per 7 days</p>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1 rounded-full animate-pulse-soft">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-primary font-black text-xs italic tracking-tighter" style="">TRENDING UP</span>
+</div>
+</div>
+</div>
+<div class="relative h-64 w-full">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+</div>
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 700 200">
+<defs>
+<linearGradient id="lineGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#3b3b42" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#d63384" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#d63384" stop-opacity="0.8"></stop>
+</linearGradient>
+<filter id="glow">
+<feGaussianBlur result="blur" stdDeviation="4"></feGaussianBlur>
+<feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+</filter>
+</defs>
+<path d="M0,180 C100,160 200,120 300,40 C400,80 500,60 600,20 L600,200 L0,200 Z" fill="url(#lineGradient)" fill-opacity="0.05"></path>
+<path class="chart-path" d="M0,180 C100,160 200,120 300,40 C400,80 500,60 600,20" fill="none" filter="url(#glow)" stroke="url(#lineGradient)" stroke-linecap="round" stroke-width="4"></path>
+<g class="cursor-pointer">
+<circle class="chart-dot fill-surface stroke-primary stroke-2" cx="300" cy="40" r="6"></circle>
+<foreignObject class="chart-tooltip opacity-0 transition-all pointer-events-none" height="40" width="80" x="260" y="-30">
+<div class="bg-surface-container-highest text-[10px] font-bold text-white px-2 py-1 rounded border border-outline/50 text-center" style="">
+                                        +84% PEAK
+                                    </div>
+</foreignObject>
+</g>
+</svg>
+<div class="absolute bottom-[-24px] left-0 right-0 flex justify-between text-[10px] font-bold tracking-tighter text-on-surface-variant/50">
+<span class="" style="">MON</span>
+<span class="" style="">TUE</span>
+<span class="text-white" style="">WED</span>
+<span class="" style="">THU</span>
+<span class="" style="">FRI</span>
+<span class="" style="">SAT</span>
+<span class="" style="">SUN</span>
+</div>
+</div>
+</div>
+<!-- Community CTA -->
+<div class="flex items-center justify-between px-4 py-2 mt-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2.5">
+<div class="w-8 h-8 rounded-full border-2 border-surface overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDemVVrTeJ44WnBOu2T79-fH7IX8WvKSt6htRuCSwACpunQF1FB7Rl6_krPiDOa35Ji6-8uTdN_pDDvY-b_F8PMtQiQXTCy31MFvMf6cgOTLs403CJ6DaFFMOcc6JPsevAhn48bOGjWFsW89NykHFw5pd4odNRMLBnpjYPidi_JYM5mYCXJZWwOdXwxg0lA72Wuq7PjrFEMvUK07N_PxXM8u2vCmzAqHhq7gqNT7iAmmjpufT-Gf8gSGgMDrb6m3z6P4iB-J3D1GvRg" style="">
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhAwqYWcnSnCEZi38ZpB1Ar5GjCSSxejsIXy18VCNUTNg1bCvDCPrN-p8BKx0Yfc0Lc1uY_CLkTEUcjPiBza39PzljWOv_lipTR2tDj2IcgPLLScSvXujfaM6KKJxO11gYCXg6Q7ngPhdCgwOxua2IuImKptTAdzqm3gxMc4HlDQ4RFrAIJ2Fq7Pqv4NtWPP5vTdrC51FKsbesJ6QgrX9aAIrDTG4c8iq3hhpkCCCKsyNb5UI3b1TfQurq9JiC3Te9DoVQpja5QtT4" style="">
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-[10px] font-bold" style="">
+                                +4k
+                            </div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant" style="">JOIN THE COMMUNITY MONITORING 2024 TRENDS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- News Section -->
+<section class="max-w-[1600px] mx-auto px-12 pb-32 relative z-10">
+<div class="flex items-end gap-6 mb-12">
+<h2 class="text-5xl font-extrabold tracking-tighter uppercase" style="">LATEST <span class="text-primary italic" style="">NEWS</span></h2>
+<div class="flex-grow border-b border-white/5 mb-2"></div>
+</div>
+<div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- News cards will be injected here via JS -->
+</div>
+</section>
+<!-- Top Impacted Companies Table Section -->
+<section class="max-w-[1600px] mx-auto px-12 pb-32 relative z-10">
+<div class="flex items-end gap-6 mb-12">
+<h2 class="text-5xl font-extrabold tracking-tighter uppercase" style="">TOP IMPACTED <span class="text-primary italic" style="">COMPANIES</span></h2>
+<div class="flex-grow border-b border-white/5 mb-2"></div>
+</div>
+<div class="glossy-table-container backdrop-blur-md rounded-[2.5rem] border border-white/10 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-white/5">
+<th class="px-10 py-8 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-on-surface-variant" style="">Company Name</th>
+<th class="px-10 py-8 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-on-surface-variant text-right" style="">Layoff Count</th>
+<th class="px-10 py-8 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-on-surface-variant" style="">Date</th>
+<th class="px-10 py-8 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-on-surface-variant" style="">Industry</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="group hover:bg-white/[0.04] transition-all">
+<td class="px-10 py-6" style="">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10">
+<img alt="Google" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVWf6S3w-P28fdN0MRlBIc6uG3LTit81TG6Gu_uSqkHkMLMC634rtSPDYcOu4d70QYrdL1BImeIvAebi_jeK1iFSADjPHd6U9n7bZjkLDVbx9cLE0GQ7EsSkBdPz48QoSQ07TY8lAOnemIJGOA6QNjKBwbiqbtxuBJC2Ea1JpnvIJpwrmsrCHt8YguUcUd7LqqJxqwP4iyVcwO-l4gxeJ3OhqrfdLnk5E_KIruB2ij6G09icq0xJ1VMrvJf52hvEuN7gkM3oKgroZd" style="">
+</div>
+<span class="font-bold text-white" style="">Google</span>
+</div>
+</td>
+<td class="px-10 py-6 text-right" style="">
+<div class="flex flex-col items-end">
+<span class="font-black text-primary italic text-lg tracking-tighter" style="">12,000</span>
+<span class="text-[0.6rem] text-primary flex items-center gap-0.5 font-bold uppercase" style=""><span class="material-symbols-outlined text-[10px]" style="">trending_up</span> 12%</span>
+</div>
+</td>
+<td class="px-10 py-6 text-sm text-on-surface-variant font-medium" style="">Jan 20, 2024</td>
+<td class="px-10 py-6" style="">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Consumer</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Cloud</span>
+</div>
+</td>
+</tr>
+<tr class="group hover:bg-white/[0.04] transition-all">
+<td class="px-10 py-6" style="">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10">
+<img alt="Meta" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBagDFtz4e6-ZboLKdyl4h4KTSUb9xBMKU8xMyaS_wYMpmEn2njZ1_TskudG0RZ4Noq3fEM_Gn2Z86H9TseSQy5i6MQ5PVIiKCHEzfX_GLNQy2cc1NK4qbcB-_o3VWF2u1HbZygOYLhIBpRwmv_Inozojw3YsHi2xXLzF0wv3GYq8zrJ2CtzAS2ctu9haHT-V5D6cy-l197h0VTjomHgTqTyPY1AlNvEXk_dPHuG0t-ljKMoxvO7mhWKMNeTwdXc0jtxIDNCKCiNK-4" style="">
+</div>
+<span class="font-bold text-white" style="">Meta</span>
+</div>
+</td>
+<td class="px-10 py-6 text-right" style="">
+<div class="flex flex-col items-end">
+<span class="font-black text-primary italic text-lg tracking-tighter" style="">10,000</span>
+<span class="text-[0.6rem] text-primary flex items-center gap-0.5 font-bold uppercase" style=""><span class="material-symbols-outlined text-[10px]" style="">trending_up</span> 8.5%</span>
+</div>
+</td>
+<td class="px-10 py-6 text-sm text-on-surface-variant font-medium" style="">Mar 14, 2024</td>
+<td class="px-10 py-6" style="">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Social</span>
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">AI</span>
+</div>
+</td>
+</tr>
+<tr class="group hover:bg-white/[0.04] transition-all">
+<td class="px-10 py-6" style="">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10">
+<img alt="Tesla" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ18OUi1idDl1NiVmMqbIq16MTIrhJnpsUrcjcFuxEjgVyEpUlbf0Mo-Y5ivp9uOvWEpi_fVf1AvoqwkC0wUGdNwdfIIH8J6Xkv0pTpV2LmneYQ26ONp-u80YJkCG3XEbSOPSsGjjgnl-gRNhFOScf53YLm-nvq9b2-GTCXYpvNq7d5ReX_x6dYDd5LoROdKafYCG7tlxWyuOfUXCSShoHz4ry9hwNs1WlQvl9LHlrs4qhKJOabt5viSHlYfvzYyzDVX33AD_53dkR" style="">
+</div>
+<span class="font-bold text-white" style="">Tesla</span>
+</div>
+</td>
+<td class="px-10 py-6 text-right" style="">
+<div class="flex flex-col items-end">
+<span class="font-black text-primary italic text-lg tracking-tighter" style="">14,000</span>
+<span class="text-[0.6rem] text-primary flex items-center gap-0.5 font-bold uppercase" style=""><span class="material-symbols-outlined text-[10px]" style="">trending_up</span> 10%</span>
+</div>
+</td>
+<td class="px-10 py-6 text-sm text-on-surface-variant font-medium" style="">Apr 15, 2024</td>
+<td class="px-10 py-6" style="">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Automotive</span>
+</div>
+</td>
+</tr>
+<tr class="group hover:bg-white/[0.04] transition-all">
+<td class="px-10 py-6" style=""><div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10"><img alt="Microsoft" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhihvcZjL7lDHuWrncUWlOvBORot5kO4bx6DmSqRh6PaTjQwUYsGP3cyNkgIZ6uK8fSJ4YkSMhQh8AH8i7mGzLWsY-3U2GF2dQXZsCoBWpMis9ExEbzahaHcvl0vCLUPfkde3LOPli-0pqb_P-98A5un0N3R5Y01bWvMLsT0XLwKp5S_E98rUitAGEcm3FCFMrxGXzpjg_Bc_8NpMEq5fscbxme74mCXgeOPyhgE3SscPi5QuiWqN7VbEKNA2756d2G79K-K-60FE_" style=""></div><span class="font-bold text-white" style="">Microsoft</span></div></td>
+<td class="px-10 py-6 text-right" style=""><div class="flex flex-col items-end"><span class="font-black text-primary italic text-lg tracking-tighter" style="">1,900</span><span class="text-[0.6rem] text-on-surface-variant/60 flex items-center gap-0.5 font-bold uppercase" style=""><span class="material-symbols-outlined text-[10px]" style="">trending_down</span> 4%</span></div></td>
+<td class="px-10 py-6 text-sm text-on-surface-variant font-medium" style="">Jan 25, 2024</td>
+<td class="px-10 py-6" style=""><div class="flex gap-2"><span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Gaming</span></div></td>
+</tr>
+<tr class="group hover:bg-white/[0.04] transition-all">
+<td class="px-10 py-6" style=""><div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10"><img alt="Amazon" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKKt4GO_egLt78xVUTVCcQh8AkeVwe_UgpkRcBJux9Oo9SnxnVIwn0NJMjpGtg0tuH1Y8GjgcFxT_Ezgs8qU1x_SvByPEx32wh8ifVQ-U1FKzMdzu5YxZTRR4YFhyCFPo0HJWQYrZIm17JqDqtbcgq4Lzi4D2y3kyjnKn-3833NjFc7R8u9zuMa4RHJt8e6N8kJ_23ZW2-fx4o56-8YTpAMMq3LyZUVScDKUculQ6yVzvay0FCuXnoHfla79vvtBhwZHTNcPH3gRin" style=""></div><span class="font-bold text-white" style="">Amazon</span></div></td>
+<td class="px-10 py-6 text-right" style=""><div class="flex flex-col items-end"><span class="font-black text-primary italic text-lg tracking-tighter" style="">1,500</span><span class="text-[0.6rem] text-primary flex items-center gap-0.5 font-bold uppercase" style=""><span class="material-symbols-outlined text-[10px]" style="">trending_up</span> 2.1%</span></div></td>
+<td class="px-10 py-6 text-sm text-on-surface-variant font-medium" style="">Apr 03, 2024</td>
+<td class="px-10 py-6" style=""><div class="flex gap-2"><span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider" style="">Retail</span></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-8 border-t border-white/5 flex justify-center">
+<button class="text-[0.65rem] font-black uppercase tracking-[0.25em] text-primary hover:text-white transition-colors" style="">Explore Full Dataset</button>
+</div>
+</div>
+</section>
+<!-- Community Voices Section (formerly What's Hot) -->
+<section class="max-w-full pb-32 relative z-10 overflow-hidden">
+<div class="max-w-[1600px] mx-auto px-12 mb-12">
+<div class="flex items-end gap-6 mb-2">
+<h2 class="text-5xl font-extrabold tracking-tighter uppercase" style="">COMMUNITY <span class="text-primary italic" style="">VOICES</span></h2>
+<div class="flex-grow border-b border-white/5 mb-2"></div>
+</div>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-[0.2em]" style="">See what employees are sharing in Reddit and Grapevine</p>
+</div>
+<div class="space-y-8 cursor-default">
+<!-- Row 1: Left -->
+<div class="marquee-container flex overflow-hidden">
+<div id="marquee-row-1" class="marquee-content flex gap-8 shrink-0 animate-marquee-ltr" style="--duration: 25s"></div>
+</div>
+<!-- Row 2: Right -->
+<div class="marquee-container flex overflow-hidden">
+<div id="marquee-row-2" class="marquee-content flex gap-8 shrink-0 animate-marquee-rtl" style="--duration: 28s"></div>
+</div>
+<!-- Row 3: Left -->
+<div class="marquee-container flex overflow-hidden">
+<div id="marquee-row-3" class="marquee-content flex gap-8 shrink-0 animate-marquee-ltr" style="--duration: 30s"></div>
+</div>
+</div>
+</section>
+</main>
+<script src="js/scripts.js"></script>
+</body></html>
