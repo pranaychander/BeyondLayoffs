@@ -107,10 +107,71 @@ async function fetchNewsLayoffs() {
 
     } catch (error) {
         console.error("Failed to fetch news data:", error);
+}
+
+async function fetchLayoffsData() {
+    try {
+        const response = await fetch('/api/layoffs');
+        const data = await response.json();
+        const companies = data.topCompanies;
+
+        const tbody = document.getElementById('companies-table-body');
+        if (!tbody) return;
+
+        tbody.innerHTML = '';
+
+        companies.forEach(company => {
+            const date = new Date(company.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            
+            let industriesHtml = '';
+            if (company.industries && Array.isArray(company.industries)) {
+                industriesHtml = company.industries.map(ind => 
+                    `<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">${ind}</span>`
+                ).join('');
+            }
+
+            const isUp = company.trend_direction === 'up';
+            const trendColorClass = isUp ? 'text-primary' : 'text-on-surface-variant/60';
+            const trendIcon = isUp ? 'trending_up' : 'trending_down';
+            const countFormatted = company.layoff_count.toLocaleString();
+
+            const rowHtml = `
+            <tr class="group hover:bg-white/[0.04] transition-all">
+                <td class="px-10 py-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center overflow-hidden border border-white/10">
+                            <img alt="${company.name}" class="w-5 h-5 object-contain" src="${company.logo_url || ''}">
+                        </div>
+                        <span class="font-bold text-white">${company.name}</span>
+                    </div>
+                </td>
+                <td class="px-10 py-6 text-right">
+                    <div class="flex flex-col items-end">
+                        <span class="font-black text-primary italic text-lg tracking-tighter">${countFormatted}</span>
+                        <span class="text-[0.6rem] ${trendColorClass} flex items-center gap-0.5 font-bold uppercase">
+                            <span class="material-symbols-outlined text-[10px]">${trendIcon}</span> ${company.trend_percentage}%
+                        </span>
+                    </div>
+                </td>
+                <td class="px-10 py-6 text-sm text-on-surface-variant font-medium">${date}</td>
+                <td class="px-10 py-6">
+                    <div class="flex gap-2">
+                        ${industriesHtml}
+                    </div>
+                </td>
+            </tr>
+            `;
+            tbody.insertAdjacentHTML('beforeend', rowHtml);
+        });
+
+    } catch (error) {
+        console.error("Failed to fetch layoffs data:", error);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchRedditLayoffs();
     fetchNewsLayoffs();
+    fetchLayoffsData();
 });
+
